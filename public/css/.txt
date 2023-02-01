@@ -1,0 +1,14 @@
+---- COLORS:
+
+background-light: #fafafa
+background-lightgray: #f5f5f5
+font-dark: #151515
+green-type1: #1797A6
+green-type1-hover: #198591
+blue-type1: #277FF2
+blue-type1-hover: #1d6fdb
+
+
+---- BREAKPOINTS:
+mobile-devices: 860px
+smart-phones: 680px
