@@ -7,6 +7,7 @@ green-type1: #1797A6
 green-type1-hover: #198591
 blue-type1: #277FF2
 blue-type1-hover: #1d6fdb
+blue-type2: #11468C --dark
 
 
 ---- BREAKPOINTS:

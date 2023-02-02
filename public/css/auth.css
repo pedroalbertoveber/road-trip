@@ -1,3 +1,7 @@
+body {
+  padding: 24px;
+}
+
 .auth-title,
 .auth-form-container {
   width: 80%;
@@ -14,6 +18,14 @@
   background-size: cover;
   background-position-y: 75%;
   border-radius: 10px 10px 0 0;
+}
+
+.container-auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 90vh;
 }
 
 .auth-title h1 {

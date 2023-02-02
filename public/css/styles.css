@@ -8,15 +8,14 @@
 body {
   background-color: #fafafa;
   color: #151515;
-  padding: 24px;
 }
 
-.container-auth {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 90vh;
+button {
+  border: 0;
+  background-color: inherit;
+  font-size: inherit;
+  padding: 0;
+  color: inherit;
 }
 
 /* MARGINS */
@@ -43,4 +42,78 @@ body {
 }
 .mt-4 {
   margin-top: 16px;
+}
+
+/* TEXT ALIGN */
+.center {
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+/* FONT SIZE */
+.sm-text {
+  font-size: 9pt;
+}
+
+.md-text {
+  font-size: 12pt;
+}
+
+.lg-text {
+  font-size: 16pt;
+}
+
+.xl-text {
+  font-size: 32pt;
+}
+
+/* FONT WEIGHT */
+.thin {
+  font-weight: lighter;
+}
+
+.medium {
+  font-weight: 400;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.x-bold {
+  font-weight: bolder;
+}
+
+/* PADDING */
+
+.pd-h-1 {
+  padding: 0 4px;
+}
+.pd-v-2 {
+  padding: 0 8px;
+}
+.pd-v-3 {
+  padding: 0 12px;
+}
+.pd-v-4 {
+  padding: 0 16px;
+}
+.pd-v-1 {
+  padding: 0 4px;
+}
+.pd-h-2 {
+  padding: 0 8px;
+}
+.pd-h-3 {
+  padding: 0 12px;
+}
+.pd-h-4 {
+  padding: 0 16px;
 }

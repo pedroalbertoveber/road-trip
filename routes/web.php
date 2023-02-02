@@ -12,6 +12,5 @@ Route::post('/register', [AuthController::class, 'signUp'])->name('auth.signUp')
 Route::middleware('authenticator')->group(function () {
     Route::get('/', function () {
         return view('welcome');
-    }
-    );
+    });
 });
