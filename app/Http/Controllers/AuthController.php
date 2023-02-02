@@ -12,9 +12,8 @@ use App\Models\User;
 
 class AuthController extends Controller
 {
-    protected $userRepository;
-    public function __construct(UserRepository $repository){
-        $this->userRepository = $repository;
+    public function __construct(private UserRepository $repository){
+
     }
 
     public function login() {
@@ -22,6 +21,12 @@ class AuthController extends Controller
     }
 
     public function signIn( SignInFormRequest $request) {
+        $allowed = $this->repository->signIn($request);
+
+        if (!$allowed) {
+            return redirect()->back()->withErrors(['Email not found or invalid password']);
+        } 
+
         return to_route('trips.index');
     }
 
@@ -30,7 +35,7 @@ class AuthController extends Controller
     }
 
     public function signUp(SignUpFormRequest $request) {
-        $this->userRepository->create($request);
+        $this->repository->create($request);
 
         return to_route('trips.index');
     }

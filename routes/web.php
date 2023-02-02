@@ -9,6 +9,9 @@ Route::get('/register', [AuthController::class, 'register'])->name('auth.registe
 Route::post('/login', [AuthController::class, 'signIn'])->name('auth.signIn');
 Route::post('/register', [AuthController::class, 'signUp'])->name('auth.signUp');
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('trips.index');
+Route::middleware('authenticator')->group(function () {
+    Route::get('/', function () {
+        return view('welcome');
+    }
+    );
+});
