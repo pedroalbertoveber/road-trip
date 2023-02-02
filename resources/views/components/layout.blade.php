@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="/css/header.css">
   <link rel="stylesheet" href="/css/footer.css">
   <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/form.css">
   
   <title>RoadTrip - {{ $pageTitle }}</title>
 </head>
@@ -41,7 +42,8 @@
             </a>
           </li>
           <li>
-            <form>
+            <form action="{{ route('auth.logout') }}" method="POST">
+              @csrf 
               <button type='submit' class="logout">
                 <i class="bi bi-box-arrow-in-left"></i> LogOut
               </button>

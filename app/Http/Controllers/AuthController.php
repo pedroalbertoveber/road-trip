@@ -9,6 +9,7 @@ use App\Http\Requests\SignInFormRequest;
 use App\Http\Requests\SignUpFormRequest;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -38,5 +39,11 @@ class AuthController extends Controller
         $this->repository->create($request);
 
         return to_route('trips.index');
+    }
+
+    public function logout(){
+        $this->repository->logout();
+
+        return to_route('auth.login');
     }
 }

@@ -14,4 +14,6 @@ interface UserRepository
   public function create(SignUpFormRequest $request): User;
 
   public function signIn(SignInFormRequest $request): bool;
+
+  public function logout(): void;
 }

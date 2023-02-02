@@ -47,4 +47,9 @@ class EloquentUserRepository implements UserRepository {
 
     return $allowed;
   }
+
+  public function logout():void
+  {
+    Auth::logout();
+  }
 }
