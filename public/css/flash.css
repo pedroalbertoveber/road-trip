@@ -1,0 +1,29 @@
+/* FLASH MESSAGES */
+
+.flash {
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 8px 16px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+.flash ul {
+  width: 100%;
+  list-style: none;
+}
+
+.flash ul li i,
+.flash i {
+  margin-right: 8px;
+}
+
+/* ERROR MESSAGES */
+.error {
+  background-color: rgb(255, 212, 212);
+  color: rgb(110, 47, 47);
+  border-color: rgb(110, 47, 47);
+}

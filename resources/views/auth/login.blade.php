@@ -1,5 +1,5 @@
 <x-auth title="Login">
-  <form class="auth-form">
+  <form class="auth-form" method="POST" action="{{ route('auth.signIn')}}">
     @csrf
     <div class="form-group">
       <label for="email">Email</label>
