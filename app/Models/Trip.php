@@ -10,9 +10,21 @@ class Trip extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'where_from', 
+        'where_to', 
+        'distance', 
+        'start_date', 
+        'end_date', 
+        'days_qty', 
+        'user_id',
+    ];
+
     public function user() {
         return $this->belongsTo(User::class, 'user_id');
     }
 
     protected $dates = ['start_date', 'end_date'];
+
+
 }

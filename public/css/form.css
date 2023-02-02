@@ -5,6 +5,7 @@
   border: 1px solid #151515;
   border-radius: 10px;
   box-shadow: 2px 2px 5px rgba(0,0,0,.05);
+  margin-bottom: 36px;
 }
 
 .form-group {
@@ -15,7 +16,8 @@
   margin-bottom: 16px;
 }
 
-.form-group label{
+.form-group label,
+.label-title {
   font-size: 18pt;
   margin-bottom: 8px;
 } 

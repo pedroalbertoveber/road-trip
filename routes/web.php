@@ -17,4 +17,5 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 Route::middleware('authenticator')->group(function () {
     Route::get('/', [TripsController::class, 'index'])->name('trips.index');
     Route::get('/create', [TripsController::class, 'create'])->name('trips.create');
+    Route::post('/store', [TripsController::class, 'store'])->name('trips.store');
 });

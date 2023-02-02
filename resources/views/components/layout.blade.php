@@ -32,7 +32,7 @@
       <nav class="nav-list">
         <ul>
           <li>
-            <a href="#">
+            <a href="{{ route('trips.create') }}">
               <i class="bi bi-car-front-fill"></i> New Trip
             </a>
           </li>
@@ -53,18 +53,16 @@
       </nav>
     </div>
   </header>
-
-  @if($errors->any())
-  <div class="flash error mt-2">
-    <ul>
-      @foreach ($errors->all() as $error)
-        <li><i class="bi bi-exclamation-circle"></i> {{ $error }}</li>
-      @endforeach
-    </ul>
-  </div>
-  @endisset
-
   <main>
+    @if($errors->any())
+    <div class="flash error mt-2">
+      <ul>
+        @foreach ($errors->all() as $error)
+          <li><i class="bi bi-exclamation-circle"></i> {{ $error }}</li>
+        @endforeach
+      </ul>
+    </div>
+    @endisset
     {{ $slot }}
   </main>
 
