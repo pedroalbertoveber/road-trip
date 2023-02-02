@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Repositories\UserRepository;
+
 use App\Http\Controllers\Controller;
+use App\Http\Repositories\UserRepository;
 use App\Http\Requests\SignInFormRequest;
 use App\Http\Requests\SignUpFormRequest;
 use Illuminate\Http\Request;
@@ -11,8 +12,9 @@ use App\Models\User;
 
 class AuthController extends Controller
 {
-    public function __construct(private UserRepository $repository){
-
+    protected $userRepository;
+    public function __construct(UserRepository $repository){
+        $this->userRepository = $repository;
     }
 
     public function login() {
@@ -28,7 +30,7 @@ class AuthController extends Controller
     }
 
     public function signUp(SignUpFormRequest $request) {
-        $this->repository->create($request);
+        $this->userRepository->create($request);
 
         return to_route('trips.index');
     }

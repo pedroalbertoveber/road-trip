@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Repositories;
+namespace App\Http\Repositories;
 
-use App\Repositories\UserRepository;
+use App\Http\Repositories\UserRepository;
 use App\Http\Requests\SignUpFormRequest;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
