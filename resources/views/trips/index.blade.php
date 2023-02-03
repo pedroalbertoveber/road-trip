@@ -64,5 +64,8 @@
       @endforeach
     </div>
   @else
+    <div class="create-new-trip">
+      <p class="go-back">It seems that you don't have any trip scheduled already, <a href="{{ route('trips.create')}}"> Click here</a> to create a new trip!</p>
+    </div>
   @endif 
 </x-layout>

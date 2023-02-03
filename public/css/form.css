@@ -22,6 +22,7 @@
   margin-bottom: 8px;
 } 
 
+.form-group select,
 .form-group input {
   width: 100%;
   padding: 8px 16px;
@@ -50,4 +51,20 @@
 
 .go-back a:hover {
   color: #1d6fdb;
+}
+
+@media screen and (max-width: 680px) {
+  .separate {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .separate .form-group:last-child {
+    padding-left: 0;
+  }
+
+  .label-title {
+    margin-bottom: 8px;
+    display: block;
+  }
 }

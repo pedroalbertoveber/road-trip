@@ -1,6 +1,6 @@
 <x-layout pageTitle='New Trip'>
   <div class="page-header mt-4 mb-4">
-    <h1 class='xl-text'><i class="bi bi-globe-americas"></i> Creating a New Trip</h1>
+    <h1 class='lg-text'><i class="bi bi-globe-americas"></i> Creating a Trip</h1>
   </div>
   <form class="form-default" method="POST" action="{{ route('trips.store') }}">
     @csrf

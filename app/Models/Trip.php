@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
+use App\Models\Car;
 
 class Trip extends Model
 {
@@ -23,6 +24,10 @@ class Trip extends Model
 
     public function user() {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function cars() {
+        return $this->hasOne(Car::class, 'trip_id');
     }
 
     protected $dates = ['start_date', 'end_date'];

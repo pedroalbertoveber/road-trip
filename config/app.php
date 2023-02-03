@@ -196,6 +196,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\UserRepositoryProvider::class,
         App\Providers\TripRepositoryProvider::class,
+        App\Providers\CarRepositoryProvider::class,
     ],
 
     /*

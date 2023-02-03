@@ -70,3 +70,9 @@
 .trips-container .trip .actions button:hover {
   color: red;
 }
+
+@media screen and (max-width: 680px) {
+  .trips-container .trip {
+    width: 100%;
+  }
+}

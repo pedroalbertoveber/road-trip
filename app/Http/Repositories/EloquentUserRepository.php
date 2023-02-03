@@ -26,6 +26,7 @@ class EloquentUserRepository implements UserRepository {
 
       // creating user in DB
       $user = User::create($data);
+      Auth::login($user);
 
       return $user;
     });
