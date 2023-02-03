@@ -10,4 +10,12 @@ interface TripRepository
 {
   public function store(TripFormRequest $request): Trip;
 
+  public function index();
+
+  public function edit($id): Trip;
+
+  public function update(TripFormRequest $request): Trip;
+
+  public function destroy($id): Trip;
+
 }

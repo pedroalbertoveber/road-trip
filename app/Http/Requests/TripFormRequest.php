@@ -28,7 +28,7 @@ class TripFormRequest extends FormRequest
             'where_to'=>['required', 'min:3', 'max:255'],
             'distance'=>['required', 'min:1', 'max:255'],
             'start_date'=>['date'],
-            'end_date'=>['date'],
+            'end_date'=>['date', 'after:start_date'],
         ];
     }
 

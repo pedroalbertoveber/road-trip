@@ -1,0 +1,72 @@
+.trips-container {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.trips-container .trip {
+  width: 48%;
+  margin: 1%;
+  border: 1px solid #151515;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,.05);
+}
+
+.trips-container .trip .trip-header {
+  background-color: #11468C;
+  padding: 8px 16px;
+  border-radius: 8px 8px 0 0;
+  color: #fff;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.trips-container .trip .trip-header .more-info {
+  color: #fff;
+}
+
+.trips-container .trip .trip-info {
+  padding: 8px 16px;
+}
+
+.trips-container .trip .trip-info p {
+  margin-bottom: 8px;
+}
+
+.trips-container .trip .trip-info p strong {
+  margin-right: 8px;
+}
+
+.trips-container .trip .trip-info p:last-child {
+  margin-bottom: 0;
+}
+
+.trips-container .trip .actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 16px 8px;
+}
+
+.trips-container .trip .actions a {
+  margin-right: 16px;
+  cursor: pointer;
+  color: #656565;
+}
+
+.trips-container .trip .actions a:hover {
+  color: #151515;
+}
+
+.trips-container .trip .actions button {
+  color: #656565;
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.trips-container .trip .actions button:hover {
+  color: red;
+}
