@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="/css/layout.css">
   <link rel="stylesheet" href="/css/form.css">
   <link rel="stylesheet" href="/css/trips-container.css">
+  <link rel="stylesheet" href="/css/details.css">
   
   <title>RoadTrip - {{ $pageTitle }}</title>
 </head>

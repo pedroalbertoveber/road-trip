@@ -11,9 +11,16 @@ class EloquentTripRepository implements TripRepository {
 
   public function index()
   {
-    $trips = Trip::where('user_id', Auth::user()->id)->get();
-
+    $trips = Trip::where('user_id', Auth::user()->id)->with('cars')->get();
     return $trips;
+  }
+
+  public function show($id): Trip
+  {
+    $trip = Trip::where('id', $id)
+      ->with('cars')->first();
+      
+    return $trip;
   }
   public function store(TripFormRequest $request): Trip 
   {   

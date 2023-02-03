@@ -13,4 +13,8 @@ interface CarRepository
   public function create($trip_id): Trip;
   public function store(CarFormRequest $request, $trip_id): Car;
 
+  public function edit($trip_id): Trip;
+
+  public function update(CarFormRequest $request): Car;
+
 }

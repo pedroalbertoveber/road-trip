@@ -79,6 +79,7 @@
       </div>
     </div>
 
+    <p class="go-back mb-2"><i class="bi bi-car-front-fill"></i> Do you want to edit the car? <a href="#">Click here</a></p>
     <p class="go-back mb-2">Don't want to edit a trip? <a href="{{route('trips.index')}}">Click Here</a></p>
     <button class="submit-button primary mt-2 mb-2" type="submit">
       Edit

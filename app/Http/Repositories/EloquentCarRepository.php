@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\Auth;
 
 class EloquentCarRepository implements CarRepository {
 
-  public function create($trip_id): Trip {
+  public function create($trip_id): Trip 
+  {
     $trip = Trip::where('id', $trip_id)->first();
     return $trip;
   }
@@ -32,6 +33,34 @@ class EloquentCarRepository implements CarRepository {
       ]);
 
       return $newCar;
+    });
+  }
+
+  public function edit($trip_id):Trip
+  {
+    $trip = Trip::where('id', $trip_id)->with('cars')->first();
+    return $trip;
+  }
+
+  public function update(CarFormRequest $request): Car
+  {
+    return DB::transaction(function () use ($request) {
+      $data = $request->except(['_token']);
+
+      // transforming data to lowercase
+      $data['brand'] = strtolower($data['brand']);
+      $data['model'] = strtolower($data['model']);
+
+      $car = Car::where('id', $data['id'])->first();
+
+      $car->brand = $data['brand'];
+      $car->model = $data['model'];
+      $car->fuel_economy = $data['fuel_economy'];
+      $car->model_year = $data['model_year'];
+
+      $car->update();
+
+      return $car;
     });
   }
 }

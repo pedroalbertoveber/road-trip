@@ -8,6 +8,7 @@ use App\Http\Requests\TripFormRequest;
 use App\Models\Trip;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class TripsController extends Controller
 {
@@ -20,6 +21,13 @@ class TripsController extends Controller
         $trips = $this->repository->index();
 
         return view('trips.index')->with('trips', $trips);
+    }
+
+    public function show($id)
+    {
+        $trip = $this->repository->show($id);
+        return view('trips.show')
+            ->with('trip', $trip);
     }
 
     public function create() 

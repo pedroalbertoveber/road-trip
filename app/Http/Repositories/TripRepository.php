@@ -12,6 +12,8 @@ interface TripRepository
 
   public function index();
 
+  public function show($id): Trip;
+
   public function edit($id): Trip;
 
   public function update(TripFormRequest $request): Trip;

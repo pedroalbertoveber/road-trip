@@ -29,15 +29,17 @@
 }
 
 .trips-container .trip .trip-info {
+  display: flex;
+  width: 100%;
+}
+
+.trips-container .trip .trip-info div {
   padding: 8px 16px;
+  width: 50%;
 }
 
 .trips-container .trip .trip-info p {
   margin-bottom: 8px;
-}
-
-.trips-container .trip .trip-info p strong {
-  margin-right: 8px;
 }
 
 .trips-container .trip .trip-info p:last-child {
@@ -74,5 +76,19 @@
 @media screen and (max-width: 680px) {
   .trips-container .trip {
     width: 100%;
+  }
+
+  .trips-container .trip .trip-info {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .trips-container .trip .trip-info div {
+    width: 100%;
+  }
+
+  .trips-container .trip .trip-info div:last-child {
+    padding-top: 0;
   }
 }

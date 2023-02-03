@@ -31,4 +31,20 @@ class CarsController extends Controller
         return to_route('trips.index')
             ->with('success', "Car {$car->brand} - {$car->model} added successfully!");
     }
+
+    public function edit($trip_id)
+    {
+        $trip = $this->repository->edit($trip_id);
+
+        return view('cars.edit')
+            ->with('trip', $trip);
+    }
+
+    public function update(CarFormRequest $request)
+    {
+        $car = $this->repository->update($request);
+
+        return to_route('trips.index')
+            ->with('success', 'Vehicle updated successfully!');
+    }
 }

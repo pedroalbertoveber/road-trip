@@ -16,34 +16,51 @@
              <i class="bi bi-arrow-right"></i>
             {{ strtoupper($trip->where_to)}}  
           </h4>
-          <a href="#" class="more-info">
+          <a href="{{ route('trips.show', $trip->id) }}" class="more-info">
             <i class="bi bi-box-arrow-in-up-right"></i>
           </a>
         </div>
 
         <div class="trip-info">
-          <p>
-            <strong>
-              <i class="bi bi-calendar-week"></i>
-            </strong>
-            <span>{{ date('d/m/Y', strtotime($trip->start_date)) }} | {{ date('d/m/Y', strtotime($trip->end_date)) }}</span>
-          </p>
-          <p>
-            <strong>
+          <div>
+            <p>
+              <strong>
+                <i class="bi bi-calendar-week"></i>
+              </strong>
+              <span>{{ date('d/m/Y', strtotime($trip->start_date)) }} | {{ date('d/m/Y', strtotime($trip->end_date)) }}</span>
+            </p>
+            <p>
+              <strong>
               <i class="bi bi-people-fill"></i>
             </strong>
-            <span>{{ $trip->travellers }}</span>
+            <span>{{ $trip->travellers }} Partners</span>
           </p>
-
+          
           <p>
             <strong>
               <i class="bi bi-sign-turn-right"></i>
-               Distance:
+              Distance:
             </strong>
             <span>{{ $trip->distance }}km</span>
           </p>
         </div>
 
+        <div>
+          <p>
+            <strong>
+              <i class="bi bi-car-front-fill"></i>
+            </strong>
+            @if(isset($trip->cars))
+            {{ strtoupper($trip->cars->brand) }} - {{ strtoupper($trip->cars->model) }}
+            @else
+            <a href="{{ route('cars.create', $trip->id)}}" class="add-icon">
+              <i class="bi bi-plus-circle-fill"></i>
+            </a>
+            @endif
+          </p>
+        </div>
+      </div>
+        
         <div class="actions">
           <a href="{{ route('trips.edit', $trip->id) }}">
             <i class="bi bi-pencil-fill"></i>

@@ -19,6 +19,6 @@ class Car extends Model
     ];
 
     public function cars() {
-        $this->belongsTo(Trip::class, 'trip_id');
+        return $this->belongsTo(Trip::class, 'trip_id');
     }
 }
