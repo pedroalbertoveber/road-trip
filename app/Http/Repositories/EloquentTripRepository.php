@@ -35,6 +35,7 @@ class EloquentTripRepository implements TripRepository {
         'where_from' => $data['where_from'],
         'where_to' => $data['where_to'],
         'distance' => $data['distance'],
+        'travellers' => $data['travellers'],
         'start_date' => $data['start_date'],
         'end_date' => $data['end_date'],
         'days_qty' => $daysQty,
@@ -72,6 +73,7 @@ class EloquentTripRepository implements TripRepository {
       $trip->where_from = $data['where_from'];
       $trip->where_to = $data['where_to'];
       $trip->distance = $data['distance'];
+      $trip->travellers = $data['travellers'];
       $trip->start_date = $data['start_date'];
       $trip->end_date = $data['end_date'];
       $trip->days_qty = $daysQty;

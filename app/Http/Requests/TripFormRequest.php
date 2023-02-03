@@ -29,6 +29,7 @@ class TripFormRequest extends FormRequest
             'distance'=>['required', 'min:1', 'max:255'],
             'start_date'=>['date'],
             'end_date'=>['date', 'after:start_date'],
+            'travellers' =>['required', 'min:1', 'max:5'],
         ];
     }
 
@@ -45,6 +46,9 @@ class TripFormRequest extends FormRequest
             'distance.max' => '"Distance" cannot be more than :max characters',
             'start_date.date' => '"Start Date" must be as a date value',
             'end_date.date' => '"End Date" must be as a date value',
+            'travellers.required' => '"Travellers" is required to create a trip',
+            'travellers.min' => 'You cannot create a trip with no travellers',
+            'travellers.max' => 'You cannot travel with more than :max people in a car',
         ];
     }
 }

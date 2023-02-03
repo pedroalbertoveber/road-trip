@@ -16,9 +16,15 @@
       </div>
     </div>
 
-    <div class="form-group">
-      <label for="distance">Distance:</label>
-      <input type="number" name="distance" id="distance" placeholder="Distance (km)" class="half">
+    <div class="separate">
+      <div class="form-group">
+        <label for="distance">Distance (km):</label>
+        <input type="number" name="distance" id="distance" placeholder="Distance (km)">
+      </div>
+      <div class="form-group">
+        <label for="travellers">Travellers:</label>
+        <input type="number" name="travellers" id="travellers" placeholder="People qnt.">
+      </div>
     </div>
 
     <span class="label-title">Dates:</span>

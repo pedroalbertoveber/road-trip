@@ -17,6 +17,7 @@ class Trip extends Model
         'start_date', 
         'end_date', 
         'days_qty', 
+        'travellers',
         'user_id',
     ];
 

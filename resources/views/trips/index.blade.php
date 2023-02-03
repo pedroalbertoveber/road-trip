@@ -16,7 +16,7 @@
              <i class="bi bi-arrow-right"></i>
             {{ strtoupper($trip->where_to)}}  
           </h4>
-          <a href="{{ route('trips.edit', $trip->id) }}" class="more-info">
+          <a href="#" class="more-info">
             <i class="bi bi-box-arrow-in-up-right"></i>
           </a>
         </div>
@@ -30,6 +30,13 @@
           </p>
           <p>
             <strong>
+              <i class="bi bi-people-fill"></i>
+            </strong>
+            <span>{{ $trip->travellers }}</span>
+          </p>
+
+          <p>
+            <strong>
               <i class="bi bi-sign-turn-right"></i>
                Distance:
             </strong>
@@ -38,7 +45,7 @@
         </div>
 
         <div class="actions">
-          <a href="#">
+          <a href="{{ route('trips.edit', $trip->id) }}">
             <i class="bi bi-pencil-fill"></i>
           </a>
 

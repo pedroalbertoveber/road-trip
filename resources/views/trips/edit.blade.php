@@ -34,16 +34,28 @@
       </div>
     </div>
 
-    <div class="form-group">
-      <label for="distance">Distance (km):</label>
-      <input 
-      type="number" 
-      name="distance" 
-      id="distance" 
-      placeholder="Distance (km)" 
-      class="half"
-      value="{{ $trip->distance }}"
-      >
+    <div class="separate">
+      <div class="form-group">
+        <label for="distance">Distance (km):</label>
+        <input 
+        type="number" 
+        name="distance" 
+        id="distance" 
+        placeholder="Distance (km)" 
+        value="{{ $trip->distance }}"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="travellers">Travellers:</label>
+        <input 
+        type="number" 
+        name="travellers" 
+        id="travellers" 
+        placeholder="People qnt."
+        value="{{ $trip->travellers }}"
+        >
+      </div>
     </div>
 
     <span class="label-title">Dates:</span>
