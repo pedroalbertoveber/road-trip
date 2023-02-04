@@ -18,7 +18,7 @@ class EloquentTripRepository implements TripRepository {
   public function show($trip_id): Trip
   {
     $trip = Trip::where('id', $trip_id)
-      ->with('cars')->first();
+      ->with(['cars', 'hotels'])->first();
       
     return $trip;
   }

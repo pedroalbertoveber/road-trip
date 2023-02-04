@@ -197,6 +197,7 @@ return [
         App\Providers\UserRepositoryProvider::class,
         App\Providers\TripRepositoryProvider::class,
         App\Providers\CarRepositoryProvider::class,
+        App\Providers\HotelRepositoryProvider::class,
     ],
 
     /*

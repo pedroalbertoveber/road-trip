@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CarsController;
+use App\Http\Controllers\HotelsController;
 use App\Http\Controllers\TripsController;
 use App\Http\Middleware\VerifyUser;
 use Illuminate\Support\Facades\Route;
@@ -52,4 +53,12 @@ Route::middleware('authenticator')->group(function () {
 
     Route::put('/{trip_id}/cars/update', [CarsController::class, 'update'])
         ->name('cars.update');
+
+    /* HOTEL'S ROUTES */
+    Route::get('/{trip_id}/hotels/create', [HotelsController::class, 'create'])
+        ->name('hotels.create')
+        ->middleware(VerifyUser::class);
+
+    Route::post('/{trip_id}/hotels/store', [HotelsController::class, 'store'])
+        ->name('hotels.store');
 });

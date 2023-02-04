@@ -30,6 +30,10 @@ class Trip extends Model
         return $this->hasOne(Car::class, 'trip_id');
     }
 
+    public function hotels() {
+        return $this->hasOne(Hotel::class, 'trip_id');
+    }
+
     protected $dates = ['start_date', 'end_date'];
 
 

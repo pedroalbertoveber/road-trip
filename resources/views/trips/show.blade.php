@@ -108,7 +108,7 @@
             <i class="bi bi-pencil-fill edit-icon" ></i>
           </a>
         @else
-          <a href="#">
+          <a href="{{ route('hotels.create', $trip->id)}}">
             <i class="bi bi-plus-circle-fill add-icon"></i>
           </a>
         @endif
