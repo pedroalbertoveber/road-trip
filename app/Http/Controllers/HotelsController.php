@@ -26,4 +26,19 @@ class HotelsController extends Controller
         return to_route('trips.show', $trip_id)
             ->with('success', "Hotel {strtoupper($hotel->name)} registered successfully!");
     }
+
+    public function edit($trip_id)
+    {
+        $trip = $this->repository->edit($trip_id);
+        return view('hotels.edit')
+            ->with('trip', $trip);
+    }
+
+    public function update(HotelFormRequest $request)
+    {
+        $this->repository->update($request);
+
+        return to_route('trips.index')
+            ->with('success', 'Hotel updated successfully!');
+    }
 }

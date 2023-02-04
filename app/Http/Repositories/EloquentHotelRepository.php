@@ -35,4 +35,28 @@ class EloquentHotelRepository implements HotelRepository {
       
     });
   }
+
+  public function update(HotelFormRequest $request): Hotel
+  {
+    return DB::transaction(function () use ($request) {
+      $data = $request->except(['_token']);
+      $hotel = Hotel::where('id', $data['hotel_id'])->first();
+
+      // transforming name to lowercase
+      $data['name'] = strtolower($data['name']);
+
+      //updating items
+      $hotel->name = $data['name'];
+      $hotel->price = $data['price'];
+
+      $hotel->update();
+      return $hotel;
+    });
+  }
+
+  public function edit($trip_id): Trip
+  {
+    $trip = Trip::where('id', $trip_id)->with('hotels')->first();
+    return $trip;
+  }
 }

@@ -59,6 +59,13 @@ Route::middleware('authenticator')->group(function () {
         ->name('hotels.create')
         ->middleware(VerifyUser::class);
 
+    Route::get('/{trip_id}/hotels/edit', [HotelsController::class, 'edit'])
+        ->name('hotels.edit')
+        ->middleware(VerifyUser::class);
+
     Route::post('/{trip_id}/hotels/store', [HotelsController::class, 'store'])
         ->name('hotels.store');
+
+    Route::put('/{trip_id}/cars/update', [HotelsController::class, 'update'])
+        ->name('hotels.update');
 });

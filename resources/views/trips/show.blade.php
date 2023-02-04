@@ -12,8 +12,8 @@
     <div class="trip-info-container">
 
       <div class="info-header-container">
-        <h4 class="strong lg-text">Main Info</h4>
-        <a href="#">
+        <h4 class="strong lg-text">Trip Info</h4>
+        <a href="{{ route('trips.edit', $trip->id) }}">
           <i class="bi bi-pencil-fill edit-icon" ></i>
         </a>
       </div>
@@ -104,11 +104,11 @@
       <div class="info-header-container">
         <h4 class=" strong lg-text">Hotel Info</h4>
         @if(isset($trip->hotels))
-          <a href="#">
+          <a href="{{ route('hotels.edit', $trip->id) }}">
             <i class="bi bi-pencil-fill edit-icon" ></i>
           </a>
         @else
-          <a href="{{ route('hotels.create', $trip->id)}}">
+          <a href="{{ route('hotels.create', $trip->id) }}">
             <i class="bi bi-plus-circle-fill add-icon"></i>
           </a>
         @endif
@@ -117,19 +117,19 @@
       @isset($trip->hotels)
       <div class="detailed-trip-info">
         <p>
-          <i class="bi bi-car-front-fill"></i>
-           Vehicle:
+          <i class="bi bi-buildings"></i>
+           Name
           <strong>
-            {{ $trip->cars->model_year }} - {{ strtoupper($trip->cars->brand) }} {{ strtoupper($trip->cars->model) }}
+            {{ strtoupper($trip->hotels->name) }}
           </strong>
         </p>
       </div>
 
       <div class="detailed-trip-info">
         <p>
-          <i class="bi bi-fuel-pump-fill"></i>
-           Fuel Economy:
-          <strong>{{ $trip->cars->fuel_economy }} km/l</strong>
+          <i class="bi bi-cash-coin"></i>
+           Price:
+          <strong>R$ {{ $trip->hotels->price }},00 / night</strong>
         </p>
       </div>
       @endisset

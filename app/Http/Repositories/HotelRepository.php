@@ -12,6 +12,10 @@ interface HotelRepository
 
   public function create($trip_id): Trip;
 
+  public function edit($trip_id): Trip;
+
   public function store(HotelFormRequest $request, $trip_id): Hotel;
+
+  public function update(HotelFormRequest $request): Hotel;
 
 }
