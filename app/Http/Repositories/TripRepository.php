@@ -12,12 +12,12 @@ interface TripRepository
 
   public function index();
 
-  public function show($id): Trip;
+  public function show($trip_id): Trip;
 
-  public function edit($id): Trip;
+  public function edit($trip_id): Trip;
 
   public function update(TripFormRequest $request): Trip;
 
-  public function destroy($id): Trip;
+  public function destroy($trip_id): Trip;
 
 }

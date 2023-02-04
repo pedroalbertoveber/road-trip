@@ -15,9 +15,9 @@ class EloquentTripRepository implements TripRepository {
     return $trips;
   }
 
-  public function show($id): Trip
+  public function show($trip_id): Trip
   {
-    $trip = Trip::where('id', $id)
+    $trip = Trip::where('id', $trip_id)
       ->with('cars')->first();
       
     return $trip;
@@ -53,9 +53,9 @@ class EloquentTripRepository implements TripRepository {
     });
   }
 
-  public function edit($id): Trip
+  public function edit($trip_id): Trip
   {
-    $trip = Trip::where('id', $id)->first();
+    $trip = Trip::where('id', $trip_id)->first();
     return $trip;
   }
 
@@ -90,9 +90,9 @@ class EloquentTripRepository implements TripRepository {
 
     });
   }
-  public function destroy($id): Trip
+  public function destroy($trip_id): Trip
   {
-    $trip = Trip::where('id', $id)->first();
+    $trip = Trip::where('id', $trip_id)->first();
     $trip->delete();
 
     return $trip;

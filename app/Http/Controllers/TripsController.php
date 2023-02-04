@@ -23,9 +23,9 @@ class TripsController extends Controller
         return view('trips.index')->with('trips', $trips);
     }
 
-    public function show($id)
+    public function show($trip_id)
     {
-        $trip = $this->repository->show($id);
+        $trip = $this->repository->show($trip_id);
         return view('trips.show')
             ->with('trip', $trip);
     }
@@ -35,9 +35,9 @@ class TripsController extends Controller
         return view('trips.create');
     }
 
-    public function edit($id)
+    public function edit($trip_id)
     {
-        $trip = $this->repository->edit($id);
+        $trip = $this->repository->edit($trip_id);
 
         return view('trips.edit')
             ->with('trip', $trip);
@@ -59,9 +59,9 @@ class TripsController extends Controller
             ->with('message', "Trip to {$newTrip->where_to} registered successfully");
     }
 
-    public function destroy($id) 
+    public function destroy($trip_id) 
     {
-        $trip = $this->repository->destroy($id);
+        $trip = $this->repository->destroy($trip_id);
         $trip->where_to = strtoupper($trip->where_to);
 
         return to_route('trips.index')
