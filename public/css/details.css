@@ -51,3 +51,15 @@
   padding: 0 0 8px;
 }
 
+/* RESPONSIVE */
+
+@media screen and (max-width: 860px) {
+  .trip-details-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .trip-details-container .trip-info-container {
+    width: 100%;
+  }
+}

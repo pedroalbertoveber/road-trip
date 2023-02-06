@@ -55,7 +55,9 @@ class EloquentTripRepository implements TripRepository {
 
   public function edit($trip_id): Trip
   {
-    $trip = Trip::where('id', $trip_id)->first();
+    $trip = Trip::where('id', $trip_id)
+      ->with(['cars', 'hotels'])->first();
+
     return $trip;
   }
 

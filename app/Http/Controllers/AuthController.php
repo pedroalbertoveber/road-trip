@@ -25,7 +25,8 @@ class AuthController extends Controller
             return redirect()->back()->withErrors(['Email not found or invalid password']);
         } 
 
-        return to_route('trips.index');
+        return to_route('trips.index')
+            ->with("success", 'Welcome back!');
     }
 
     public function register() {
@@ -35,7 +36,8 @@ class AuthController extends Controller
     public function signUp(SignUpFormRequest $request) {
         $this->repository->create($request);
 
-        return to_route('trips.index');
+        return to_route('trips.index')
+            ->with("success", "Welcome to RoadTrip!");
     }
 
     public function logout(){

@@ -58,6 +58,19 @@
             </a>
             @endif
           </p>
+
+          <p>
+            <strong>
+              <i class="bi bi-buildings"></i>
+            </strong>
+            @if(isset($trip->hotels))
+            {{ strtoupper($trip->hotels->name) }}
+            @else
+            <a href="{{ route('hotels.create', $trip->id)}}" class="add-icon">
+              <i class="bi bi-plus-circle-fill"></i>
+            </a>
+            @endif
+          </p>
         </div>
       </div>
         

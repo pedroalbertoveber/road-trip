@@ -55,7 +55,7 @@
       </nav>
     </div>
   </header>
-  <main>
+  <main class="mb-4">
     @if($errors->any())
     <div class="flash error mt-2">
       <ul>
@@ -65,6 +65,17 @@
       </ul>
     </div>
     @endisset
+
+    @if(session('success'))
+    <div class="flash mt-2 success">
+      <ul>
+        <li>
+          <i class="bi bi-star-fill"></i> {{ session('success') }}
+        </li>
+      </ul>
+    </div>
+    @endif
+
     {{ $slot }}
   </main>
 

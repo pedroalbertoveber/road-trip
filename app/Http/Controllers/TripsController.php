@@ -5,10 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Http\Repositories\TripRepository;
 use App\Http\Requests\TripFormRequest;
-use App\Models\Trip;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 
 class TripsController extends Controller
 {
@@ -54,9 +50,10 @@ class TripsController extends Controller
     public function store(TripFormRequest $request) 
     {
         $newTrip = $this->repository->store($request);
+        $newTrip->where_to = strtoupper($newTrip->where_to);
 
         return to_route('trips.index')
-            ->with('message', "Trip to {$newTrip->where_to} registered successfully");
+            ->with('success', "Trip to {$newTrip->where_to} registered successfully");
     }
 
     public function destroy($trip_id) 

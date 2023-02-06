@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('model');
             $table->double('fuel_economy');
             $table->integer('model_year');
-            $table->foreignId('trip_id')->constrained();
+            $table->foreignId('trip_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

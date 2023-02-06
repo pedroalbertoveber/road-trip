@@ -27,3 +27,9 @@
   color: rgb(110, 47, 47);
   border-color: rgb(110, 47, 47);
 }
+
+.success {
+  background-color: rgb(208, 255, 208);
+  color: rgb(12, 24, 12);
+  border-color: rgb(12, 24, 12);
+}

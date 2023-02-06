@@ -21,7 +21,7 @@ return new class extends Migration
             $table->date('start_date');
             $table->date('end_date');
             $table->integer('days_qty');
-            $table->foreignId('user_id')->constrained();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -138,3 +138,9 @@ button {
 .primary:hover {
   background-color: #198591;
 }
+
+@media screen and (max-width: 860px) {
+  .submit-button {
+    width: 100%;
+  }
+}

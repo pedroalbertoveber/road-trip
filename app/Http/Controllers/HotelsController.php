@@ -23,8 +23,10 @@ class HotelsController extends Controller
     public function store(HotelFormRequest $request, $trip_id)
     {
         $hotel = $this->repository->store($request, $trip_id);
+        $hotel->name = strtoupper($hotel->name);
+
         return to_route('trips.show', $trip_id)
-            ->with('success', "Hotel {strtoupper($hotel->name)} registered successfully!");
+            ->with('success', "Hotel {$hotel->name} registered successfully!");
     }
 
     public function edit($trip_id)
