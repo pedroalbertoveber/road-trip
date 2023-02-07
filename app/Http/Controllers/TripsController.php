@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\TripRegistered;
 use App\Http\Controllers\Controller;
 use App\Http\Repositories\TripRepository;
 use App\Http\Requests\TripFormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class TripsController extends Controller
 {
@@ -49,8 +51,15 @@ class TripsController extends Controller
     }
     public function store(TripFormRequest $request) 
     {
+
         $newTrip = $this->repository->store($request);
         $newTrip->where_to = strtoupper($newTrip->where_to);
+
+        TripRegistered::dispatch(
+            Auth::user()->name,
+            $newTrip->where_to,
+            $newTrip->id,
+        );
 
         return to_route('trips.index')
             ->with('success', "Trip to {$newTrip->where_to} registered successfully");

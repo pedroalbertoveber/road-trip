@@ -9,7 +9,7 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class UserSignedUp extends Mailable
+class TripRegistered extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -20,11 +20,10 @@ class UserSignedUp extends Mailable
      */
     public function __construct(
         public string $name,
+        public string $where_to,
+        public int $id,
     )
-    
-    {
-        //
-    }
+    {}
 
     /**
      * Get the message envelope.
@@ -34,7 +33,7 @@ class UserSignedUp extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: "Welcome to RoadTrip!",
+            subject: 'New Trip Scheduled',
         );
     }
 
@@ -46,7 +45,7 @@ class UserSignedUp extends Mailable
     public function content()
     {
         return new Content(
-            markdown: 'mail.user-signed-up',
+            markdown: 'mail.trip-scheduled',
         );
     }
 

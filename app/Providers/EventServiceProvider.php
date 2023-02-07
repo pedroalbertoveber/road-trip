@@ -3,7 +3,9 @@
 namespace App\Providers;
 
 use App\Events\NewUser;
+use App\Events\TripRegistered;
 use App\Listeners\NewUserWelcomeEmail;
+use App\Listeners\TripRegisteredListener;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -22,6 +24,9 @@ class EventServiceProvider extends ServiceProvider
         ],
         NewUser::class => [
             NewUserWelcomeEmail::class,
+        ],
+        TripRegistered::class => [
+            TripRegisteredListener::class,
         ],
     ];
 
