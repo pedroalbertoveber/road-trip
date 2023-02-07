@@ -5,6 +5,7 @@ use App\Http\Controllers\CarsController;
 use App\Http\Controllers\HotelsController;
 use App\Http\Controllers\TripsController;
 use App\Http\Middleware\VerifyUser;
+use App\Mail\UserSignedUp;
 use Illuminate\Support\Facades\Route;
 
 /* PUBLIC ROUTES */
@@ -14,6 +15,12 @@ Route::get('/register', [AuthController::class, 'register'])->name('auth.registe
 Route::post('/login', [AuthController::class, 'signIn'])->name('auth.signIn');
 Route::post('/register', [AuthController::class, 'signUp'])->name('auth.signUp');
 Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
+
+Route::get('/mail', function () {
+    return new UserSignedUp(
+        'Peter',
+    );
+});
 
 /* PRIVATE ROUTES */
 Route::middleware('authenticator')->group(function () {

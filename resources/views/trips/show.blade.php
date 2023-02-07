@@ -136,6 +136,28 @@
 
     </div>
 
-  </section>
+    @isset($trip->cars) 
+      @isset($trip->hotels)
+
+        <div class="trip-info-container">
+          <div class="info-header-container">
+            <h4 class="strong lg-text">Amount</h4>
+          </div>
+          <p>
+            <i class="bi bi-currency-dollar"></i>
+            Hotel Price:
+            <strong> R$ {{ $trip->days_qty * $trip->hotels->price }},00</strong>
+          </p>
+
+          <p>
+            <i class="bi bi-fuel-pump-fill"></i>
+            Fuel:
+            <strong> {{ round(($trip->distance / $trip->cars->fuel_economy), 2)  }} L</strong>
+          </p>
+        </div>
+
+      @endisset
+    @endisset
+    </section>
 
 </x-layout>
