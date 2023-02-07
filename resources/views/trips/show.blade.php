@@ -9,6 +9,17 @@
 
   <section class="trip-details-container">
 
+    <figure class="thumbnail">
+      <img 
+        @if ($trip->image_path)
+          src="{{ asset('storage/' . $trip->image_path) }}" 
+        @else 
+          src="/img/trips/trip-image-default.jpg"
+        @endif 
+        alt="trip to {{ $trip->where_to }}"
+        >
+    </figure>
+
     <div class="trip-info-container">
 
       <div class="info-header-container">
@@ -152,12 +163,13 @@
           <p>
             <i class="bi bi-fuel-pump-fill"></i>
             Fuel:
-            <strong> {{ round(($trip->distance / $trip->cars->fuel_economy), 2)  }} L</strong>
+            <strong> {{ round(($trip->distance / $trip->cars->fuel_economy * 2), 2)  }} L</strong>
           </p>
         </div>
 
       @endisset
     @endisset
-    </section>
 
+  </section>
+  <p class="go-back mt-4 mb-4">Do you want to see all your trips? <a href="{{ route('trips.index') }}">Click here</a></p>
 </x-layout>

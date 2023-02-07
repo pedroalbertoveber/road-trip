@@ -20,6 +20,7 @@ class Trip extends Model
         'days_qty', 
         'travellers',
         'user_id',
+        'image_path',
     ];
 
     public function user() {

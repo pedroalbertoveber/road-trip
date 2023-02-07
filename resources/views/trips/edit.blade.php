@@ -5,12 +5,16 @@
        Edit trip to {{ strtoupper($trip->where_to) }}
     </h1>
   </div>
-  <form class="form-default" method="POST" action="{{ route('trips.update') }}">
+  <form class="form-default" method="POST" action="{{ route('trips.update') }}" enctype="multipart/form-data">
     @csrf
     @method('PUT')
 
     <input type="hidden" name="id" id="id" value="{{ $trip->id }}">
 
+    <div class="form-group">
+      <label for="trip_image">Image:</label>
+      <input type="file" id="trip_image" accept="trip_image/jpg, trip_image/jpeg, trip_image/png" name="trip_image">
+    </div>
     <div class="separate">
       <div class="form-group">
         <label for="where_from">Where from:</label>

@@ -27,6 +27,14 @@ class EloquentTripRepository implements TripRepository {
     return DB::transaction(function () use ($request) {
       $data = $request->except(['_token']);
 
+      if($request->hasFile('trip_image')) { 
+        // retriving image_path or setting as null
+        $image_path = $data['trip_image']
+          ->store('trip_images', 'public');
+      } else {
+        $image_path = null;
+      }
+    
       // transforming data to lowercase
       $data['where_from'] = strtolower($data['where_from']);
       $data['where_to'] = strtolower($data['where_to']);
@@ -47,6 +55,7 @@ class EloquentTripRepository implements TripRepository {
         'end_date' => $data['end_date'],
         'days_qty' => $daysQty,
         'user_id' => Auth::user()->id,
+        'image_path' => $image_path,
       ]);
 
       return $newTrip;
@@ -65,6 +74,14 @@ class EloquentTripRepository implements TripRepository {
   {
     return DB::transaction(function () use ($request) {
       $data = $request->except(['_token']);
+
+      if($request->hasFile('trip_image')) { 
+        // retriving image_path or setting as null
+        $image_path = $data['trip_image']
+          ->store('trip_images', 'public');
+      } else {
+        $image_path = null;
+      }
 
       // transforming data to lowercase
       $data['where_from'] = strtolower($data['where_from']);
@@ -86,10 +103,10 @@ class EloquentTripRepository implements TripRepository {
       $trip->start_date = $data['start_date'];
       $trip->end_date = $data['end_date'];
       $trip->days_qty = $daysQty;
+      $trip->image_path = $image_path;
 
       $trip->update();
       return $trip;
-
     });
   }
   public function destroy($trip_id): Trip

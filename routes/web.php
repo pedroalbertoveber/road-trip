@@ -73,6 +73,6 @@ Route::middleware('authenticator')->group(function () {
     Route::post('/{trip_id}/hotels/store', [HotelsController::class, 'store'])
         ->name('hotels.store');
 
-    Route::put('/{trip_id}/cars/update', [HotelsController::class, 'update'])
+    Route::put('/{trip_id}/hotels/update', [HotelsController::class, 'update'])
         ->name('hotels.update');
 });

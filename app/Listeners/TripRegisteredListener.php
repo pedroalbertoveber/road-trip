@@ -30,7 +30,7 @@ class TripRegisteredListener
     public function handle(TripRegistered $event)
     {
         $email = new TripMail(
-                Auth::user()->name,
+                $event->name,
                 $event->where_to,
                 $event->id,
         );

@@ -8,6 +8,19 @@
   flex-wrap: wrap;
 }
 
+.trip-details-container .thumbnail {
+  width: 100%;
+  height: 300px;
+  margin-bottom: 16px;
+}
+
+.trip-details-container .thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
 .trip-details-container .trip-info-container {
   width: 50%;
   padding: 0 16px 8px;

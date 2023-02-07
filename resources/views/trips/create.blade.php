@@ -2,9 +2,12 @@
   <div class="page-header mt-4 mb-4">
     <h1 class='lg-text'><i class="bi bi-globe-americas"></i> Creating a Trip</h1>
   </div>
-  <form class="form-default" method="POST" action="{{ route('trips.store') }}">
+  <form class="form-default" method="POST" action="{{ route('trips.store') }}" enctype="multipart/form-data">
     @csrf
-
+    <div class="form-group">
+      <label for="trip_image">Image:</label>
+      <input type="file" id="trip_image" accept="trip_image/jpg, trip_image/jpeg, trip_image/png" name="trip_image">
+    </div>
     <div class="separate">
       <div class="form-group">
         <label for="where_from">Where from:</label>

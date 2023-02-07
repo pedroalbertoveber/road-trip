@@ -30,6 +30,7 @@ class TripFormRequest extends FormRequest
             'start_date'=>['date'],
             'end_date'=>['date', 'after:start_date'],
             'travellers' =>['required', 'min:1', 'lt:6'],
+            'trip_image' => [],
         ];
     }
 
