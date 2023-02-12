@@ -1,6 +1,6 @@
 <x-layout pageTitle='Edit Car'>
   <div class="page-header mt-4 mb-4">
-    <h1 class='lg-text'><i class="bi bi-globe-americas"></i> Edit a Car - Trip to {{ strtoupper($trip->where_to)}}</h1>
+    <h1 class='lg-text'><i class="bi bi-globe-americas"></i> Edit Car - Trip to {{ strtoupper($trip->where_to)}}</h1>
   </div>
   <form class="form-default" method="POST" action="{{ route('cars.update', $trip->id) }}">
     @csrf

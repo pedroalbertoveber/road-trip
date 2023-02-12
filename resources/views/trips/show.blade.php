@@ -171,5 +171,5 @@
     @endisset
 
   </section>
-  <p class="go-back mt-4 mb-4">Do you want to see all your trips? <a href="{{ route('trips.index') }}">Click here</a></p>
+  <p class="go-back mt-4 mb-4">Do you want to go back to main menu? <a href="{{ route('trips.index') }}">Click here</a></p>
 </x-layout>
